@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: f633ebe752e68f44f984163a0b5f19b0
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: RadioButton
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

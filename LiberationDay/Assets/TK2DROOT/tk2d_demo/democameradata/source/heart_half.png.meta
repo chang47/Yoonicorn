@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 775e311b21d73a74c93ca74a71671b1e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: heart_half
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

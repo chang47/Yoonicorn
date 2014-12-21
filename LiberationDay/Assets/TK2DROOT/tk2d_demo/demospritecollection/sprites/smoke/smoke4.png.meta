@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 39734a83ab620ae42b7fd778891e490e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: smoke4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

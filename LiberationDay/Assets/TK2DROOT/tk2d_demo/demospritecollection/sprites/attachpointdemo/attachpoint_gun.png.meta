@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 2733d522def134859aee48fa56620cc2
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: attachpoint_gun
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

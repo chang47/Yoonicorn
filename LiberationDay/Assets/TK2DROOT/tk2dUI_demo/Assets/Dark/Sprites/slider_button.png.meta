@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 0dfd239ca260444eb869628fb04f885e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: slider_button
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

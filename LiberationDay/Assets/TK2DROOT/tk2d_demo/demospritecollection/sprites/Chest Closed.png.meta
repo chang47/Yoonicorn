@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 6b3b26a1fb4ebcf448d47859ec1cb66f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Chest Closed
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

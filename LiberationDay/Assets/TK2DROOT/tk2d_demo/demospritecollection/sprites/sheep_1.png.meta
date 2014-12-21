@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: d20c61a95bed34948a4408be780c3d55
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: sheep_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

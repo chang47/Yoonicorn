@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: f38c1e9651d69654c87ea0956466e36d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: explosion_44FR
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

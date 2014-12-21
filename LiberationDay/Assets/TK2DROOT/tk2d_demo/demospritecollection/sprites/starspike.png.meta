@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: fe18dfa9012243c4ea82497709a18b26
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: starspike
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
