@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: de9bc1393812a4d9185d3e5128eb05aa
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Nunito16
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

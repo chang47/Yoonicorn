@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 4a3adedb01045d0458d6e6330d1dd25d
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: bubble_orange
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

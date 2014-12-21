@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: accb00e270a9cec42addd7602ee0264c
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: DropDownButton
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

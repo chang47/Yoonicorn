@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: abd2d4d8e662ace4c961589c5d18e01f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: wavyground
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

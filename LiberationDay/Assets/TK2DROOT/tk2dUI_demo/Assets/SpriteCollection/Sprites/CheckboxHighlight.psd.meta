@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: a894d1cc513d8194b80c2ee2188a02f3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: CheckboxHighlight
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 497b9ad7eb29145da83de9ae7b39627a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: textbox_bg
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

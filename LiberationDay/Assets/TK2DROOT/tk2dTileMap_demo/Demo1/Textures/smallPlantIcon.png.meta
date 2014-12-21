@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 0e83afcbf810b4a3083b1bc40bf10632
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: smallPlantIcon
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

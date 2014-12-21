@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: bee881e7b06f83347a7986eaecec6ef3
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ScrollbarButtonUpDown
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: 10b038b1b05b3d44998364213b44a84b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: SlicedButton
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: ce42d39374f446b43974cdf748be1594
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: animdemo_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
