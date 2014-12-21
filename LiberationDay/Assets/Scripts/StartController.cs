@@ -5,6 +5,6 @@ public class StartController : MonoBehaviour {
 
 
 	public void OnClickPlay() {
-		Application.LoadLevel ("LiberationDay");
+		Application.LoadLevel ("ShowUnitMenu");
 	}
 }

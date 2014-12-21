@@ -15,13 +15,23 @@ public class MegaController : MonoBehaviour {
 
 	void OnGUI () {
 		if(showMenu) {
-			if(GUI.Button (new Rect (0,0,100,50), "Move")){
-				transform.position = new Vector2(transform.position.x + 1, transform.position.y + 1);
-			}else if(GUI.Button (new Rect (0,50,100,50), "Attack")){
-				//Options code goes here
-			}else if(GUI.Button (new Rect (0,100,100,50), "Cancel")){
+			Event e = Event.current;
+			Rect windowPos = GUI.Window(0, new Rect(0, 0, 100, 170), draw, "Options:");
+
+			if(e.type == EventType.MouseDown && !windowPos.Contains(e.mousePosition)) {
 				showMenu = false;
 			}
+		}
+	}
+
+	void draw(int aID) {
+		if(GUI.Button (new Rect (0,20,100,50), "Move")){
+			transform.position = new Vector2(transform.position.x + 1, transform.position.y + 1);
+			showMenu = false;
+		}else if(GUI.Button (new Rect (0,70,100,50), "Attack")){
+			//Options code goes here
+		}else if(GUI.Button (new Rect (0,120,100,50), "Cancel")){
+			showMenu = false;
 		}
 	}
 
