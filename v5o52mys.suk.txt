@@ -1,0 +1,170 @@
+﻿commit pull request
+
+Merge branch 'feature/grid' of git://github.com/jonathangs/Yoonicorn into jonathangs-feature/grid
+
+Conflicts:
+	LiberationDay/LiberationDay-csharp.sln
+	LiberationDay/LiberationDay.sln
+	LiberationDay/LiberationDay.userprefs
+	LiberationDay/Library/CurrentLayout.dwlt
+	LiberationDay/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+	LiberationDay/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll.mdb
+	LiberationDay/Library/ScriptAssemblies/Assembly-CSharp.dll
+	LiberationDay/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+	LiberationDay/Library/assetDatabase3
+	LiberationDay/Library/expandedItems
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch jonathangs-feature/grid
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   LiberationDay/Assembly-CSharp-Editor-vs.csproj
+#	modified:   LiberationDay/Assembly-CSharp-Editor.csproj
+#	modified:   LiberationDay/Assembly-CSharp-vs.csproj
+#	modified:   LiberationDay/Assembly-CSharp.csproj
+#	modified:   LiberationDay/Assets/Image/Start.jpg.meta
+#	modified:   LiberationDay/Assets/Image/Start2.jpg.meta
+#	modified:   LiberationDay/Assets/Image/Start3.jpg.meta
+#	modified:   LiberationDay/Assets/Image/StartScreen.png.meta
+#	new file:   LiberationDay/Assets/Maps/level0.txt
+#	new file:   LiberationDay/Assets/Resources/Prefab/terrain0.prefab
+#	new file:   LiberationDay/Assets/Resources/Prefab/terrain1.prefab
+#	modified:   LiberationDay/Assets/Scene/LiberationDay.unity
+#	new file:   LiberationDay/Assets/Scripts/Terrain/LevelManager_Script.cs
+#	new file:   LiberationDay/Assets/Scripts/Terrain/TerrainTraits_Script.cs
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/blocker.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coinIcon.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0001.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0002.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0003.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0004.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0005.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0006.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0007.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0008.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0009.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0010.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0011.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0012.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0013.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0014.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0015.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0016.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0017.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0018.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/coin_anim/coin_0019.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/player.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/player_disabled.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/rocks.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dTileMap_demo/Demo1/Textures/smallPlantIcon.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Fonts/Nunito16.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Fonts/Nunito24.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Fonts/Nunito32.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/button_bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/checkbox_bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/checkbox_tick.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/profile_pic.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/radiobutton_bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/radiobutton_fg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/slider_bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/slider_button.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/slider_fg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/textbox_bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/textbox_bg_selected.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Dark/Sprites/window_bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/Font/OldSansBlack/OldSansBlack_0.tga.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/Checkbox.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/CheckboxHighlight.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/Checkbox_X.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/DropDownButton.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/DropDownButtonHover.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/InputItemBackground.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/InputItemBackgroundHover.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/InputItemBackgroundHoverSolid.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/RadioButton.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/RadioButtonDot.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/RadioButtonHover.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/Scrollbar.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/ScrollbarButtonUpDown.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/ScrollbarButtonUpDownHover.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/ScrollbarThumbButton.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/ScrollbarThumbButtonHover.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/SlicedButton.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/SlicedButton_Hover.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/WhiteSquare.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/WhiteSquareAnchorTopLeft.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2dUI_demo/Assets/SpriteCollection/Sprites/background.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demobmfont/test_0.tga.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/democameradata/source/heart_empty.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/democameradata/source/heart_full.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/democameradata/source/heart_half.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/democameradata/source/window.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/SpriteCollection_Data/atlas.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/2dtoolkit_logo.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/Brown Block.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/Chest Closed.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/Rock.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/Stone Block.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/animdemo/animdemo_1.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/animdemo/animdemo_2.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/animdemo/animdemo_3.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/animdemo/animdemo_4.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/animdemo/animdemo_5.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/attachpointdemo/attachpoint_glasses.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/attachpointdemo/attachpoint_gun.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/attachpointdemo/attachpoint_walk.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/background.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/bg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/bg1.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/bubble_green.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/bubble_orange.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/bubble_red.psd.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/button_down.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/button_up.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/cloud1.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/cloud2.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/crate.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/explosiontest/core.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/explosiontest/explosion_beam.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/explosiontest/smoke.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/ground.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/platform.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/platform_spiked.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/sheep_0.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/sheep_1.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/sheep_2.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/slicedButton_down.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/slicedButton_up.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/smoke/smoke0.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/smoke/smoke1.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/smoke/smoke2.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/smoke/smoke3.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/smoke/smoke4.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/smoke/smoke5.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/starspike.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/sun.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/demospritecollection/sprites/wavyground.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/multiatlas/explosion_44FR.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/spider/src/body.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/spider/src/lowerleg.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/spider/src/mouth.png.meta
+#	modified:   LiberationDay/Assets/TK2DROOT/tk2d_demo/spider/src/upperleg.png.meta
+#	modified:   LiberationDay/LiberationDay-csharp.sln
+#	modified:   LiberationDay/LiberationDay.sln
+#	modified:   LiberationDay/LiberationDay.userprefs
+#	modified:   LiberationDay/Library/AssetServerCacheV3
+#	modified:   LiberationDay/Library/InspectorExpandedItems.asset
+#	modified:   LiberationDay/Library/ScriptMapper
+#	modified:   LiberationDay/Library/guidmapper
+#	modified:   LiberationDay/Library/shadercompiler-1.log
+#
+
