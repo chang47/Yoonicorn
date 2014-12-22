@@ -16,14 +16,16 @@ public class LevelManager_Script : MonoBehaviour {
 	// rows and columns of map
 	int rows;
 	int columns;
+	public static int val = 5;
 
 	// this is the array that should be accessed for movement 
 	// logic by various units in gameplay to determine legal 
 	// movement 
-	public GameObject[,] terrain;
+	public static GameObject[,] terrain;
+	public static int[,] units;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		// normally InitializeLevel would be called elsewhere in game.
 		// for testing purposes, we're just calling it here.
 		InitializeLevel("level0");
@@ -38,6 +40,7 @@ public class LevelManager_Script : MonoBehaviour {
 		rows = int.Parse (levelDataArr[0]);
 		columns = int.Parse(levelDataArr[1]);
 		terrain = new GameObject[rows, columns];
+		units = new int[rows, columns];
 		for(int i = 0; i < rows; i++){
 			string[] row =  levelDataArr[i + 2].Split(new string[] {" "}, System.StringSplitOptions.RemoveEmptyEntries);
 			for(int j = 0; j < columns; j++){
@@ -48,6 +51,7 @@ public class LevelManager_Script : MonoBehaviour {
 				terrainPiece.transform.parent = gameObject.transform;
 				// update array so it can be accessed by other game objects
 				terrain[i,j] = terrainPiece;
+
 			}
 		}
 	}

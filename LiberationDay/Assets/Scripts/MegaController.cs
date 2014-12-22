@@ -3,9 +3,14 @@ using System.Collections;
 
 public class MegaController : MonoBehaviour {
 	private bool showMenu = false;
+	private int hp = 10;
+	private int attack = 5;
+	private int move = 3;
 	// Use this for initialization
 	void Start () {
-	
+		//LevelManager_Script.val = 123213;
+		//Debug.Log (LevelManager_Script.val);
+		LevelManager_Script.units [(int)transform.position.x, (int)-transform.position.y] = (int)transform.position.x;
 	}
 	
 	// Update is called once per frame
@@ -36,6 +41,7 @@ public class MegaController : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
+		Debug.Log(LevelManager_Script.units[(int)transform.position.x, (int)-transform.position.y]);
 		showMenu = !showMenu;
 		if(showMenu) {
 			Debug.Log("true");
