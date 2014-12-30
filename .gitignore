@@ -1,4 +1,3 @@
-LiberationDay/Library/
-LiberationDay/Assembly-CSharp-Editor-vs.csproj
-LiberationDay/Assembly-CSharp-Editor.csproj
-LiberationDay/Assembly-CSharp-Editor-vs.csproj
+LiberationDay/
+!LiberationDay/Assets/
+!LiberationDay/work.txt
