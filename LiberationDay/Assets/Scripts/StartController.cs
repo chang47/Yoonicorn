@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class StartController : MonoBehaviour {
-
-
+	
 	public void OnClickPlay() {
-		Application.LoadLevel ("ShowUnitMenu");
+		GameController.load ();
+		Application.LoadLevel ("LevelSelect");
 	}
 }

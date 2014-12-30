@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Flag1_controller.cs" />
-     <Compile Include="Assets\LevelSelect.cs" />
+     <Compile Include="Assets\Scripts\Adjuster.cs" />
+     <Compile Include="Assets\Scripts\Flag1_controller.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\LevelSelect.cs" />
      <Compile Include="Assets\Scripts\MegaController.cs" />
      <Compile Include="Assets\Scripts\StartController.cs" />
      <Compile Include="Assets\Scripts\Terrain\LevelManager_Script.cs" />

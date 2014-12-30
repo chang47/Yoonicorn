@@ -14,7 +14,7 @@ public class Flag1_controller : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		LevelSelect.level2 = true;
+		GameController.stage2 = true;
 		Application.LoadLevel ("levelselect");
 	}
 }
