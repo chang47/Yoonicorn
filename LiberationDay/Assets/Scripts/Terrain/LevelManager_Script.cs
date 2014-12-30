@@ -14,25 +14,26 @@ using System.IO;
 
 public class LevelManager_Script : MonoBehaviour {
 	// rows and columns of map
-	int rows;
-	int columns;
+	public static int rows;
+	public static int columns;
 	public static int val = 5;
 
 	// this is the array that should be accessed for movement 
 	// logic by various units in gameplay to determine legal 
 	// movement 
 	public static GameObject[,] terrain;
-	public static int[,] units;
+	public static bool[,] units;
 
 	// Use this for initialization
 	void Awake () {
 		// normally InitializeLevel would be called elsewhere in game.
 		// for testing purposes, we're just calling it here.
+		// TODO: Move this elsewhere when testing is over.
 		InitializeLevel("level0");
 	}
 
 	// this function takes a text file that represents a map and uses it to 
-	// initialize the terrain array and game word
+	// initialize the terrain array and game world
 	public void InitializeLevel(string levelName){
 		//make string out of map .txt file
 		string levelData = File.ReadAllText( Application.dataPath + "/Maps/" + levelName + ".txt");
@@ -40,7 +41,7 @@ public class LevelManager_Script : MonoBehaviour {
 		rows = int.Parse (levelDataArr[0]);
 		columns = int.Parse(levelDataArr[1]);
 		terrain = new GameObject[rows, columns];
-		units = new int[rows, columns];
+		units = new bool[rows, columns];
 		for(int i = 0; i < rows; i++){
 			string[] row =  levelDataArr[i + 2].Split(new string[] {" "}, System.StringSplitOptions.RemoveEmptyEntries);
 			for(int j = 0; j < columns; j++){
