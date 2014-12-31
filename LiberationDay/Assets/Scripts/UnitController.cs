@@ -20,8 +20,6 @@ public class UnitController : MonoBehaviour {
 
 	public static void battle(GameObject enemy) {
 		//receives enemy game object and fights
-		//Debug.Log ();
-		//Debug.Log ();
 	}
 
 	public static void move(GameObject terrain) {
