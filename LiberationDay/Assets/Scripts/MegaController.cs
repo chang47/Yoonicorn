@@ -13,6 +13,7 @@ public class MegaController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log ();
 		//LevelManager_Script.val = 123213;
 		//Debug.Log (LevelManager_Script.val);
 		LevelManager_Script.units [(int)-transform.position.y, (int)transform.position.x] = true;
