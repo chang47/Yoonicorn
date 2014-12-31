@@ -10,4 +10,12 @@ public class TerrainTraits_Script : MonoBehaviour {
 	public float damageBonus = 1.0f;
 	// defensive bonus for being in this terrain (1 by default)
 	public float defensiveBonus = 1.0f;
+
+	public int posX;
+
+	public int posY;
+
+	void Start() {
+		Debug.Log (posX + " " + posY);
+	}
 }
