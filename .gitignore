@@ -1,2 +1,8 @@
 LiberationDay/
+<<<<<<< HEAD
+=======
+!LiberationDay/Assets/
+!LiberationDay/Assets/Scripts/
+!LiberationDay/Assets/Scene/
+>>>>>>> d9b024d45d449ba74bc4f3c5df19d2d401579b8f
 !LiberationDay/work.txt
