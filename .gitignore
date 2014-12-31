@@ -1,3 +1,5 @@
 LiberationDay/
 !LiberationDay/Assets/
+!LiberationDay/Assets/Scripts/
+!LiberationDay/Assets/Scene/
 !LiberationDay/work.txt
