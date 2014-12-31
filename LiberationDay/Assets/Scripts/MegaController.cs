@@ -80,7 +80,9 @@ public class MegaController : MonoBehaviour {
 			//transform.position = new Vector2(transform.position.x + 1, transform.position.y + 1);
 			drawMovementRange();
 			//Debug.Log("movementRange: " + movementRange.Count);
-			showMenu = false;
+
+			UnitController.unit = this.gameObject;
+			UnitController.unitMove = true;
 		}else if(GUI.Button (new Rect (0,70,100,50), "Attack")){
 			//attack();
 			bool[,] units = LevelManager_Script.units;
