@@ -6,15 +6,22 @@ using System.Collections;
  */
 public class UnitController : MonoBehaviour {
 
+	// The unit being controlled
 	public static GameObject unit;
+
+	// flag for if move state is entered.
 	public static bool unitMove;
+
+	// flag for if attack state is entered
 	public static bool unitAttack;
+
+	// flag to see if any units have been selected for control.
 	public static bool inUse;
 
 	public static void battle(GameObject enemy) {
 		//receives enemy game object and fights
-		Debug.Log ();
-		Debug.Log ();
+		//Debug.Log ();
+		//Debug.Log ();
 	}
 
 	public static void move(GameObject terrain) {
