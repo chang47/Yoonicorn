@@ -31,6 +31,7 @@ public class LevelManager_Script : MonoBehaviour {
 		// TODO: Move this elsewhere when testing is over.
 		InitializeLevel("level0");
 	}
+	
 
 	// this function takes a text file that represents a map and uses it to 
 	// initialize the terrain array and game world

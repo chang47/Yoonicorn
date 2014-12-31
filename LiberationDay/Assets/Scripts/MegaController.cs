@@ -9,6 +9,7 @@ public class MegaController : MonoBehaviour {
 	private int attack = 5;
 	private int move = 3;
 	private HashSet<GameObject> movementRange;
+	private bool foundEnemy;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +40,38 @@ public class MegaController : MonoBehaviour {
 				showMenu = false;
 			}
 		}
+		if(foundEnemy) {
+
+			bool[,] units = LevelManager_Script.units;
+			int posX = (int)transform.position.x;
+			int posY = (int)-transform.position.y;
+
+			if(LevelManager_Script.units[posX - 1, posY]) {
+				GUI.Label(new Rect(posX - 1, posY, 20, 20), "location :" + units[posX - 1, posY]);
+				if(GUI.Button(new Rect(posX - 1 * 32, posY, 100, 200), "left")) {
+					foundEnemy = false;
+				}
+				//left
+			} else if(LevelManager_Script.units[posX + 1, posY]) {
+				//right
+				GUI.Label(new Rect(posX + 1, posY, 20, 20), "location :" + units[posX + 1, posY]);
+				if(GUI.Button(new Rect(posX + 1, posY, 100, 200), "right")) {
+					foundEnemy = false;
+				}
+			} else if(LevelManager_Script.units[posX, posY - 1]) {
+				//above
+				GUI.Label(new Rect(posX, posY - 1, 20, 20), "location :" + units[posX, posY - 1]);
+				if(GUI.Button(new Rect(posX, posY - 1, 100, 200), "above")) {
+					foundEnemy = false;
+				}
+			} else if(LevelManager_Script.units[posX, posY + 1]) {
+				//behind
+				GUI.Label(new Rect(posX, posY + 1, 20, 20), "location :" + units[posX, posY + 1]);
+				if(GUI.Button(new Rect(posX, posY + 1, 100, 200), "below")) {
+					foundEnemy = false;
+				}
+			}
+		}
 	}
 
 	void draw(int aID) {
@@ -48,7 +81,12 @@ public class MegaController : MonoBehaviour {
 			//Debug.Log("movementRange: " + movementRange.Count);
 			showMenu = false;
 		}else if(GUI.Button (new Rect (0,70,100,50), "Attack")){
-			//Options code goes here
+			//attack();
+			bool[,] units = LevelManager_Script.units;
+			int posX = (int)transform.position.x;
+			int posY = (int)-transform.position.y;
+			foundEnemy = true;
+
 		}else if(GUI.Button (new Rect (0,120,100,50), "Cancel")){
 			showMenu = false;
 		}
