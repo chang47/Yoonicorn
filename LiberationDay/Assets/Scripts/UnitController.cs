@@ -23,7 +23,18 @@ public class UnitController : MonoBehaviour {
 	}
 
 	public static void move(GameObject terrain) {
-		//movement method
+		TerrainTraits_Script tScript = terrain.GetComponent<TerrainTraits_Script> ();
+
+		LevelManager_Script.units [(int)-unit.transform.position.y, (int)unit.transform.position.x] = false;
+		unit.transform.position = new Vector2 (tScript.posX, -tScript.posY);
+		LevelManager_Script.units [(int)-unit.transform.position.y, (int)unit.transform.position.x] = true;
+
+		foreach (GameObject tile in unit.GetComponent<MegaController>().movementRange) {
+			tile.transform.GetChild (0).renderer.material.color = Color.white;
+		}
+
+		unit.GetComponent<MegaController> ().movementRange.Clear ();
+		unitMove = false;
 	}
 
 }

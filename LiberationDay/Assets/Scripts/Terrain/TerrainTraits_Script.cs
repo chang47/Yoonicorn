@@ -16,6 +16,13 @@ public class TerrainTraits_Script : MonoBehaviour {
 	public int posY;
 
 	void Start() {
-		Debug.Log (posX + " " + posY);
+		//Debug.Log (posX + " " + posY);
+	}
+
+	void OnMouseDown() {
+		if (UnitController.unitMove && 
+		    UnitController.unit.GetComponent<MegaController>().movementRange.Contains(this.gameObject)) {
+			UnitController.move(this.gameObject);
+		}
 	}
 }

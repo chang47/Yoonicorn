@@ -49,8 +49,8 @@ public class LevelManager_Script : MonoBehaviour {
 				// get terrain object that is dependent on number from level .txt file
 				GameObject terrainPiece = Instantiate(Resources.Load("Prefab/terrain" + row[j], typeof(GameObject)), 
 				                                      transform.position + new Vector3(j,-i,0), transform.rotation) as GameObject;
-				terrainPiece.GetComponent<TerrainTraits_Script>().posX = i;
-				terrainPiece.GetComponent<TerrainTraits_Script>().posY = j;
+				terrainPiece.GetComponent<TerrainTraits_Script>().posX = j;
+				terrainPiece.GetComponent<TerrainTraits_Script>().posY = i;
 
 				// make this parent to prevent tiles from cluttering hierarchy
 				terrainPiece.transform.parent = gameObject.transform;
