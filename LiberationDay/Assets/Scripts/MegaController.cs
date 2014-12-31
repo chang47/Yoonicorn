@@ -55,7 +55,7 @@ public class MegaController : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		Debug.Log(LevelManager_Script.units[(int)transform.position.x, (int)-transform.position.y]);
+		Debug.Log(LevelManager_Script.units[(int)-transform.position.y, (int)transform.position.x]);
 		showMenu = !showMenu;
 		if(showMenu) {
 			//Debug.Log("true");
