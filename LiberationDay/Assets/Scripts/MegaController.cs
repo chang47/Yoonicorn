@@ -61,6 +61,8 @@ public class MegaController : MonoBehaviour {
 	}
 
 	//@TODO - figure out how to add new labels
+	// give unitcontrolelr access to the enemy and allow it to make all of 
+	// these unit movements and attack gui displaying
 	void option(int aID) {
 		if(GUI.Button(new Rect(0, 20, 100, 50), "wait")) {
 			UnitController.unit.turnEnd = true;

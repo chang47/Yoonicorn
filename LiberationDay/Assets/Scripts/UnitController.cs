@@ -18,6 +18,9 @@ public class UnitController : MonoBehaviour {
 	// flag to see if any units have been selected for control.
 	public static bool inUse;
 
+	// The enemy unit being attacked
+	public static MegaController enemyUnit;
+
 	public static void battle(GameObject enemy) {
 		//receives enemy game object and fights
 	}
