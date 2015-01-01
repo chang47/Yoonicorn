@@ -2,7 +2,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
-
+/**
+ * Flow order:
+ * 1. User clicks on unit, the inUse flag is unitMove flag is turned on
+ * 2. Two options
+ * 	a. User clicks to move unit location
+ * 	b. User clicks on cancel button to unselect
+ * 3. After moving, check to see if there are units that can be attacked around and
+ *    turn on showMenu flag and the unitAttack flag if nearby enemies. Maybe cache the enemies
+ *    to save re-checking enemy location
+ * 4. Three options:
+ * 	a. Wait - set endTurn flag to true
+ * 	b. Attack - attacks ones of the surrounding enemies and set the endTurn, canAttack flag to true
+ *  c. Cancel - moves unit back to starting position and allows moving again
+ * 
+ */
 public class MegaController : MonoBehaviour {
 	private bool showMenu = false;
 	private int hp = 10;
@@ -10,12 +24,18 @@ public class MegaController : MonoBehaviour {
 	private int move = 3;
 	public HashSet<GameObject> movementRange;
 	private bool foundEnemy;
+	private bool turnEnd;
+	private int posX;
+	private int	posY;
+	private bool attackMenu = false;
 
 	// Use this for initialization
 	void Start () {
 		//LevelManager_Script.val = 123213;
 		//Debug.Log (LevelManager_Script.val);
 		LevelManager_Script.units [(int)-transform.position.y, (int)transform.position.x] = true;
+		posX = (int)-transform.position.x;
+		posY = (int)transform.position.y;
 		/*for (int i = 0; i < LevelManager_Script.rows; i++) {
 			for (int j = 0; j < LevelManager_Script.columns; j++) {
 				if (LevelManager_Script.units [i, j]) {
@@ -25,27 +45,103 @@ public class MegaController : MonoBehaviour {
 		}*/
 		movementRange = new HashSet<GameObject>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
 
 	void OnGUI () {
-		if(showMenu) {
-			Event e = Event.current;
-			Rect windowPos = GUI.Window(0, new Rect(0, 0, 100, 170), draw, "Options:");
+		//unit finished move
 
-			if(e.type == EventType.MouseDown && !windowPos.Contains(e.mousePosition)) {
-				showMenu = false;
+		if(showMenu) { //display after finsih moving unit
+			Rect unitOptions = GUI.Window(0, new Rect(0, 0, 100, 170), option, "Command");
+			//Event e = Event.current;
+			//Rect windowPos = GUI.Window(0, new Rect(0, 0, 100, 170), draw, "Options:");
+
+			//if(e.type == EventType.MouseDown && !windowPos.Contains(e.mousePosition)) {
+			//	showMenu = false;
+			//}
+		}
+	}
+
+	//@TODO - figure out how to add new labels
+	void option(int aID) {
+		if(GUI.Button(new Rect(0, 20, 100, 50), "wait")) {
+			UnitController.unit.turnEnd = true;
+			showMenu = false;
+		}
+		if(false){ // inRange() there are nearby enemies
+			if(GUI.Button(new Rect(0, 70, 100, 50), "attack")) {
+				UnitController.unitAttack = true; //allows attacking and probably highlighting unit that can attack
+				labels();
 			}
 		}
-		if(foundEnemy) {
+	}
 
+	void labels() {
+		GUI.Label (new Rect (0, 200, 100, 30), "attacking now");
+	}
+
+	void draw(int aID) {
+		if(GUI.Button (new Rect (0,20,100,50), "Move")){
+			//transform.position = new Vector2(transform.position.x + 1, transform.position.y + 1);
+			drawMovementRange();
+			//Debug.Log("movementRange: " + movementRange.Count);
+
+			UnitController.unit = this;
+			UnitController.unitMove = true;
+		}else if(GUI.Button (new Rect (0,70,100,50), "Attack")){
+			//attack();
 			bool[,] units = LevelManager_Script.units;
 			int posX = (int)transform.position.x;
 			int posY = (int)-transform.position.y;
+			foundEnemy = true;
 
+		}else if(GUI.Button (new Rect (0,120,100,50), "Cancel")){
+			showMenu = false;
+		}
+	}
+
+	//@TODO - 
+	void OnMouseDown() {
+		Debug.Log(LevelManager_Script.units[(int)-transform.position.y, (int)transform.position.x]);
+		showMenu = !showMenu;
+
+		//Behavior of units.
+		if(UnitController.inUse) {
+			//Attacks the unit within range
+			if(inRange(UnitController.unit) && UnitController.unitAttack) { //&& UnitController.unitAttack //after move, atk phase
+				Destroy(this.gameObject);
+
+				//De-selects the unit and 
+				UnitController.unitAttack = false;
+				UnitController.unitMove = false;
+				UnitController.unit.turnEnd = true;
+			}
+			UnitController.inUse = false;
+		} else {
+			//sets the selected unit to be the one to be controlled
+			UnitController.unit = this;
+			UnitController.inUse = true;
+			UnitController.unitMove = true;
+		}
+	}
+
+	//Calculates if the enemy unit being clicked is next to the user unit.
+	bool inRange(MegaController unit) {
+		if((this.posX - 1 == unit.posX && this.posY == unit.posY) ||
+		   (this.posX + 1 == unit.posX && this.posY == unit.posY) ||
+		   (this.posX == unit.posX && this.posY - 1 == unit.posY) ||
+		   (this.posX == unit.posX && this.posY + 1 == unit.posY)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	void attackEnemy() {
+		if(foundEnemy) {
+			
+			bool[,] units = LevelManager_Script.units;
+			int posX = (int)transform.position.x;
+			int posY = (int)-transform.position.y;
+			
 			if(LevelManager_Script.units[posX - 1, posY]) {
 				GUI.Label(new Rect(posX - 1, posY, 20, 20), "location :" + units[posX - 1, posY]);
 				if(GUI.Button(new Rect(posX - 1 * 32, posY, 100, 200), "left")) {
@@ -71,36 +167,6 @@ public class MegaController : MonoBehaviour {
 					foundEnemy = false;
 				}
 			}
-		}
-	}
-
-	void draw(int aID) {
-		if(GUI.Button (new Rect (0,20,100,50), "Move")){
-			//transform.position = new Vector2(transform.position.x + 1, transform.position.y + 1);
-			drawMovementRange();
-			//Debug.Log("movementRange: " + movementRange.Count);
-
-			UnitController.unit = this.gameObject;
-			UnitController.unitMove = true;
-		}else if(GUI.Button (new Rect (0,70,100,50), "Attack")){
-			//attack();
-			bool[,] units = LevelManager_Script.units;
-			int posX = (int)transform.position.x;
-			int posY = (int)-transform.position.y;
-			foundEnemy = true;
-
-		}else if(GUI.Button (new Rect (0,120,100,50), "Cancel")){
-			showMenu = false;
-		}
-	}
-
-	void OnMouseDown() {
-		Debug.Log(LevelManager_Script.units[(int)-transform.position.y, (int)transform.position.x]);
-		showMenu = !showMenu;
-		if(showMenu) {
-			//Debug.Log("true");
-		} else {
-			//Debug.Log("false");
 		}
 	}
 

@@ -7,7 +7,7 @@ using System.Collections;
 public class UnitController : MonoBehaviour {
 
 	// The unit being controlled
-	public static GameObject unit;
+	public static MegaController unit;
 
 	// flag for if move state is entered.
 	public static bool unitMove;
