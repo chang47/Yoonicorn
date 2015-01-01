@@ -10,19 +10,38 @@ public class UnitController : MonoBehaviour {
 	public static MegaController unit;
 
 	// flag for if move state is entered.
-	public static bool unitMove;
+	public static bool canMove;
 
 	// flag for if attack state is entered
-	public static bool unitAttack;
+	public static bool canAttack;
 
 	// flag to see if any units have been selected for control.
 	public static bool inUse;
 
-	// The enemy unit being attacked
+	// The enemy unit being attacked.
 	public static MegaController enemyUnit;
 
-	public static void battle(GameObject enemy) {
-		//receives enemy game object and fights
+	public static bool attackMenu = false;
+	/*
+	void OnGUI() {
+		if(attackMenu) {
+			Rect window = GUI.Window(0, new Rect(Screen.width - 320, Screen.height - 300, 300, 300), attackInfo, "Battle stats");
+		}
+	}
+
+	void attackInfo(int aID) {
+		if(GUI.Button(new Rect(0, 20, 300, 150), "Yes")) {
+			enemyUnit.remove();
+			enemyUnit = null;
+			attackMenu = false;
+		}if(GUI.Button(new Rect(0, 170, 300, 150), "No")) {
+			attackMenu = false;
+		}
+	}
+
+*/	public static void battle(MegaController enemy) {
+		enemyUnit = enemy;
+		attackMenu = true;
 	}
 
 	public static void move(GameObject terrain) {
@@ -37,7 +56,7 @@ public class UnitController : MonoBehaviour {
 		}
 
 		unit.GetComponent<MegaController> ().movementRange.Clear ();
-		unitMove = false;
+		canMove = false;
 	}
 
 }

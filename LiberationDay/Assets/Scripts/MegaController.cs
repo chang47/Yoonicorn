@@ -24,7 +24,7 @@ public class MegaController : MonoBehaviour {
 	private int move = 3;
 	public HashSet<GameObject> movementRange;
 	private bool foundEnemy;
-	private bool turnEnd;
+	private bool turnEnd = false;
 	private int posX;
 	private int	posY;
 	private bool attackMenu = false;
@@ -58,6 +58,27 @@ public class MegaController : MonoBehaviour {
 			//	showMenu = false;
 			//}
 		}
+
+		if(UnitController.attackMenu) {
+			Rect window = GUI.Window(0, new Rect(Screen.width - 320, Screen.height - 300, 300, 300), attackInfo, "Battle stats");
+		}
+	}
+
+	void attackInfo(int aID) {
+		if(GUI.Button(new Rect(0, 20, 300, 150), "Yes")) {
+			UnitController.enemyUnit.remove();
+			UnitController.enemyUnit = null;
+			UnitController.attackMenu = false;
+
+			//De-selects the unit
+			UnitController.canAttack = false;
+			UnitController.canMove = false;
+			UnitController.unit.turnEnd = true;
+			UnitController.unit.showMenu = false; // makes sure unit can select any more movement
+			UnitController.inUse = false;
+		}if(GUI.Button(new Rect(0, 170, 300, 150), "No")) {
+			UnitController.attackMenu = false;
+		}
 	}
 
 	//@TODO - figure out how to add new labels
@@ -68,61 +89,57 @@ public class MegaController : MonoBehaviour {
 			UnitController.unit.turnEnd = true;
 			showMenu = false;
 		}
-		if(false){ // inRange() there are nearby enemies
-			if(GUI.Button(new Rect(0, 70, 100, 50), "attack")) {
-				UnitController.unitAttack = true; //allows attacking and probably highlighting unit that can attack
-				labels();
+		if(GUI.Button(new Rect(0, 70, 100, 50), "cancel")) {
+			//Do whatever's necessary for reverting movement.
+			UnitController.inUse = false;
+			UnitController.canMove = false;
+			UnitController.unit = null;;
+			showMenu = false;
+		}
+		if(true){ // inRange() check if there are nearby enemies
+			if(GUI.Button(new Rect(0, 120, 100, 50), "attack")) {
+				UnitController.canAttack = true; //allows attacking and probably highlighting unit that can attack
+				//showMenu = false;
 			}
 		}
+	}
+
+	public void remove() {
+		Destroy (this.gameObject);
 	}
 
 	void labels() {
 		GUI.Label (new Rect (0, 200, 100, 30), "attacking now");
 	}
 
-	void draw(int aID) {
-		if(GUI.Button (new Rect (0,20,100,50), "Move")){
-			//transform.position = new Vector2(transform.position.x + 1, transform.position.y + 1);
-			drawMovementRange();
-			//Debug.Log("movementRange: " + movementRange.Count);
-
-			UnitController.unit = this;
-			UnitController.unitMove = true;
-		}else if(GUI.Button (new Rect (0,70,100,50), "Attack")){
-			//attack();
-			bool[,] units = LevelManager_Script.units;
-			int posX = (int)transform.position.x;
-			int posY = (int)-transform.position.y;
-			foundEnemy = true;
-
-		}else if(GUI.Button (new Rect (0,120,100,50), "Cancel")){
-			showMenu = false;
-		}
-	}
-
-	//@TODO - 
+	 
 	void OnMouseDown() {
 		Debug.Log(LevelManager_Script.units[(int)-transform.position.y, (int)transform.position.x]);
-		showMenu = !showMenu;
 
 		//Behavior of units.
-		if(UnitController.inUse) {
+		if(UnitController.inUse && UnitController.canAttack) {
+			Debug.Log("attack click");
 			//Attacks the unit within range
-			if(inRange(UnitController.unit) && UnitController.unitAttack) { //&& UnitController.unitAttack //after move, atk phase
-				Destroy(this.gameObject);
-
-				//De-selects the unit and 
-				UnitController.unitAttack = false;
-				UnitController.unitMove = false;
-				UnitController.unit.turnEnd = true;
+			//if this is selected it means this must be the enemy unit.
+			if(inRange(UnitController.unit)) {
+				UnitController.battle(this);
 			}
-			UnitController.inUse = false;
-		} else {
+			//UnitController.inUse = false; //?
+		} else if(!turnEnd && !UnitController.inUse) {
+			//If this is selected, this must be the unit user selects
+			//@TODO once selected, movement happens
+			Debug.Log("first click");
+
 			//sets the selected unit to be the one to be controlled
 			UnitController.unit = this;
 			UnitController.inUse = true;
-			UnitController.unitMove = true;
+			UnitController.canMove = true;
+			menu (); // called somewhere after unit has selected movement space
 		}
+	}
+
+	public void menu() {
+		showMenu = !showMenu;
 	}
 
 	//Calculates if the enemy unit being clicked is next to the user unit.

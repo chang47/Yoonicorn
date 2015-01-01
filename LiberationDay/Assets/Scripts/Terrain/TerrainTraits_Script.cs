@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class TerrainTraits_Script : MonoBehaviour {
@@ -20,7 +20,7 @@ public class TerrainTraits_Script : MonoBehaviour {
 	}
 
 	void OnMouseDown() {
-		if (UnitController.unitMove && 
+		if (UnitController.canMove && 
 		    UnitController.unit.GetComponent<MegaController>().movementRange.Contains(this.gameObject)) {
 			UnitController.move(this.gameObject);
 		}
